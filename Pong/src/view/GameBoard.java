@@ -46,7 +46,7 @@ public class GameBoard extends JPanel {
 			public void keyPressed(KeyEvent e) {
 				
 				int direction = e.getKeyCode();
-				System.out.println(e.getKeyCode());
+				//System.out.println(e.getKeyCode());
 			
 				if(direction == LEFT)
 					movePaddle1(paddle1.x - PIXEL_STEP);
