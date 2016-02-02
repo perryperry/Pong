@@ -1,32 +1,20 @@
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
 
-import view.GameBoard;
+public class PongMain {
 
-public class PongMain 
-{
-
+	private final static int PORT = 22222;
+	
 	public static void main(String[] args) 
 	{
-		//This avoids race conditions by placing the GUI action handling on the EventDispatchThread
-		 SwingUtilities.invokeLater(new Runnable() {
-	            public void run() {
-	                initGUI(); 
-	            }
-	     });
+		Socket connection;
+		try {
+			ServerSocket server = new ServerSocket(PORT);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
-	
-	//create and launch gui
-	private static void initGUI()
-	{
-		GameBoard board = new GameBoard();
-		System.out.println("Created GUI on EDT? "+ SwingUtilities.isEventDispatchThread());
-		JFrame f = new JFrame("Pong");
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
-		f.add(board);
-		f.setSize(500,700);
-		f.setVisible(true);
-		f.setResizable(false);
-	}
-	
+
 }
