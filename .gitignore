@@ -1,2 +1,5 @@
 *.name
 *.xml
+*.iml
+Output/Model/Player.class
+*.class
