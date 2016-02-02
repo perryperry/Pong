@@ -3,5 +3,7 @@ package Model;
 /**
  * Player class
  */
-public class Player {
+public class Player 
+{
+	
 }
